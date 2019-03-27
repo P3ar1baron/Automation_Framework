@@ -5,6 +5,8 @@ using OpenQA.Selenium.Chrome;
 using System;
 using Tests.Pages;
 using Framework.Utils;
+using System.Threading;
+using System.Collections.Generic;
 
 namespace Tests
 {
@@ -29,8 +31,21 @@ namespace Tests
         [Test]
         public void TestSearch()
         {
+            var searchText = "Men's Martin Boots";
             EtsyMainPage etsyMainPage = new EtsyMainPage(driver);
-            etsyMainPage.searchArea.searchField.SetText("");
+            etsyMainPage.searchArea.searchField.SetText(searchText);
+            etsyMainPage.searchArea.searchButton.Click();
+
+            EtsySearchPage etsySearchPage = new EtsySearchPage(driver);
+
+            var texts = etsySearchPage.searchResultsTextItems;
+
+            foreach (var textItem in texts)
+            {
+                Console.WriteLine(textItem.Text);
+                Assert.True(textItem.Text.Contains(searchText));
+            }
+
         }
     }
 }

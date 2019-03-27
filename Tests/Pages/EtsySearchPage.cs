@@ -1,10 +1,7 @@
 ﻿using Framework.Pages;
 using OpenQA.Selenium;
-using System;
+using SeleniumExtras.PageObjects;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Tests.Pages
 {
@@ -14,5 +11,8 @@ namespace Tests.Pages
         {
 
         }
+
+        [FindsBy(How = How.XPath, Using = "//*[contains(@class, 'v2-listing-card__info') and not (contains(@class, 'flex'))]")]
+        public IList<IWebElement> searchResultsTextItems;
     }
 }
