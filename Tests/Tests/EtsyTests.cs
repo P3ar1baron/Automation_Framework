@@ -3,6 +3,8 @@ using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System;
+using Tests.Pages;
+using Framework.Utils;
 
 namespace Tests
 {
@@ -22,6 +24,13 @@ namespace Tests
         public void TearDown()
         {
             driver.Quit();
+        }
+
+        [Test]
+        public void TestSearch()
+        {
+            EtsyMainPage etsyMainPage = new EtsyMainPage(driver);
+            etsyMainPage.searchArea.searchField.SetText("");
         }
     }
 }

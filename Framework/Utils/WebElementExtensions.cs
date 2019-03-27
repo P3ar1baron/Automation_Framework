@@ -3,9 +3,9 @@ using OpenQA.Selenium.Support.UI;
 
 namespace Framework.Utils
 {
-    static class WebElementExtensions
+    public static class WebElementExtensions
     {
-        public static void SetText(IWebElement element, string text)
+        public static void SetText(this IWebElement element, string text)
         {
             element.SendKeys(text);
         }
