@@ -1,5 +1,6 @@
 ﻿using Framework.Pages;
 using OpenQA.Selenium;
+using SeleniumExtras.PageObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,14 @@ namespace Tests.Pages
     {
         public EtsyMainPage(IWebDriver driver) : base(driver)
         {
+            
         }
+        [FindsBy(How = How.Id, Using = "search-query")]
+        public IWebElement searchField;
+
+        [FindsBy(How = How.CssSelector, Using = "button[value='Search']")]
+        public IWebElement searchButton;
+
+
     }
 }
