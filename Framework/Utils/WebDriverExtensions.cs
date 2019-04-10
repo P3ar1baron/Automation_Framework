@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Framework.Utils
 {
-    static class WebDriverExtensions
+    static class WebDriverExtensionsr
     {
 
     }
