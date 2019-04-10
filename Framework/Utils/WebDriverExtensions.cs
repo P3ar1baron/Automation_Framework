@@ -5,7 +5,8 @@ namespace Framework.Utils
 {
     public static class WebDriverExtensions
     {
-        public static void TakeScreenshot(this IWebDriver driver, string pathToFile = @"C:\Users\Vlad\screen.png",
+        const string path = @"C:\Users\Vlad\screen.png";
+        public static void TakeScreenshot(this IWebDriver driver, string pathToFile = path,
              ScreenshotImageFormat format = ScreenshotImageFormat.Png)
         {
             ((ITakesScreenshot)driver)
