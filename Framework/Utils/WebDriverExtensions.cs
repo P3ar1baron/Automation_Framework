@@ -1,19 +1,17 @@
 ﻿using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Configuration;
 
 namespace Framework.Utils
 {
-    static class WebDriverExtensions
+    public static class WebDriverExtensions
     {
-        static void TakeScreenshot(this IWebDriver driver)
+        public static void TakeScreenshot(this IWebDriver driver, string pathToFile = @"C:\Users\Vlad\screen.png",
+             ScreenshotImageFormat format = ScreenshotImageFormat.Png)
         {
             ((ITakesScreenshot)driver)
                 .GetScreenshot()
-                .SaveAsFile("path to file", ScreenshotImageFormat.Png);
+                .SaveAsFile(pathToFile,format);
+
         }
     }
 }

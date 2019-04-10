@@ -46,6 +46,8 @@ namespace Tests
                 Assert.True(textItem.Text.Contains(searchText));
             }
 
+            driver.TakeScreenshot();
+
         }
     }
 }
