@@ -14,5 +14,11 @@ namespace Framework.Utils
                 .SaveAsFile(pathToFile,format);
 
         }
+
+        public static void ExecuteJavascript(this IWebDriver driver, string jsScript, params object[] args)
+        {
+            ((IJavaScriptExecutor)driver).ExecuteScript(jsScript, args);
+        }
     }
 }
+

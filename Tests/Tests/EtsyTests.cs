@@ -7,6 +7,7 @@ using Tests.Pages;
 using Framework.Utils;
 using System.Threading;
 using System.Collections.Generic;
+using Framework.Driver;
 
 namespace Tests
 {
@@ -17,7 +18,7 @@ namespace Tests
         [SetUp]
         public void SetUp()
         {
-            driver = new ChromeDriver();
+            driver = CustomDriver.Driver;
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             driver.Manage().Window.Maximize();
             driver.Navigate().GoToUrl("https://www.etsy.com/");
@@ -47,6 +48,7 @@ namespace Tests
             }
 
             driver.TakeScreenshot();
+            driver.ExecuteJavascript("some script",etsyMainPage.searchArea.searchButton);
 
         }
     }

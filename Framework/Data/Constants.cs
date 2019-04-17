@@ -27,20 +27,6 @@ namespace Framework.Data
             Test(Browsers.Chrome);
         }
 
-        public IWebDriver Driver
-        {
-            get
-            {
-                if (ConfigurationManager.AppSettings["Browser"] == "Chrome")
-                {
-                    return new ChromeDriver();
-                }
-                
-                else
-                {
-                    return new ChromeDriver();
-                }
-            }
-        }
+       
     }
 }
